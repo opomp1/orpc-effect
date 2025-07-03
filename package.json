@@ -30,7 +30,8 @@
     "env:all:ec": "bun env:dev:ec && bun env:uat:ec && bun env:prod:ec",
     "dotenvx:example": "bun env:dev:dc && bun run dev",
     "dotenvx:start": "dotenvx run -- bun start",
-    "commit": "lint-staged && cz"
+    "commit": "lint-staged && cz",
+    "build": "bun build.ts"
   },
   "config": {
     "commitizen": {
@@ -39,5 +40,16 @@
     "cz-customizable": {
       "config": "./cz.config.cjs"
     }
+  },
+  "dependencies": {
+    "@orpc/client": "^1.6.3",
+    "@orpc/openapi": "^1.6.3",
+    "@orpc/server": "^1.6.3",
+    "@prisma/client": "^6.11.0",
+    "effect": "^3.16.11",
+    "hono": "^4.8.3",
+    "minio": "^8.0.5",
+    "prisma": "^6.11.0",
+    "redis": "^5.5.6"
   }
 }
