@@ -1,1 +1,2 @@
-bun test
+bun env:all:ec
+git add .

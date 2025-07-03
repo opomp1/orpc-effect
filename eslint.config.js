@@ -1,5 +1,5 @@
-import antfu from '@antfu/eslint-config'
-import perfectionist from 'eslint-plugin-perfectionist'
+import antfu from "@antfu/eslint-config"
+import perfectionist from "eslint-plugin-perfectionist"
 
 export default antfu(
   {
@@ -7,21 +7,21 @@ export default antfu(
     //    react: true,
     stylistic: {
       indent: 2,
-      quotes: 'double',
+      quotes: "double",
     },
     typescript: true,
   },
   {
-    plugins: [perfectionist.configs['recommended-alphabetical']],
+    plugins: [perfectionist.configs["recommended-alphabetical"]],
     rules: {
-      'no-console': 'warn',
-      'perfectionist/sort-objects': 'error',
-      'ts/consistent-type-definitions': 'off',
-      'unicorn/throw-new-error': 'off',
-      'unused-imports/no-unused-imports': 'error',
+      "no-console": "warn",
+      "perfectionist/sort-objects": "error",
+      "ts/consistent-type-definitions": "off",
+      "unicorn/throw-new-error": "off",
+      "unused-imports/no-unused-imports": "error",
     },
   },
   {
-    ignores: ['build', '**/*.json', '.husky/install.mjs', 'src/providers/prisma/generated'],
+    ignores: ["build", "**/*.json", ".husky/install.mjs", "src/providers/prisma/generated"],
   },
 )
