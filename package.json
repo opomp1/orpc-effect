@@ -6,6 +6,10 @@
     "@antfu/eslint-config": "^4.16.2",
     "@dotenvx/dotenvx": "^1.45.2",
     "@types/bun": "latest",
+    "commitizen": "^4.3.1",
+    "commitlint": "^19.8.1",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "cz-customizable": "^7.4.0",
     "eslint": "^9.30.1",
     "eslint-plugin-perfectionist": "^4.15.0"
   },
@@ -24,6 +28,15 @@
     "env:all:dc": "bun env:dev:dc && bun env:uat:dc && bun env:prod:dc",
     "env:all:ec": "bun env:dev:ec && bun env:uat:ec && bun env:prod:ec",
     "dotenvx:example": "bun env:dev:dc && bun run dev",
-    "dotenvx:start": "dotenvx run -- bun start"
+    "dotenvx:start": "dotenvx run -- bun start",
+    "commit": "cz"
+  },
+    "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz.config.cjs"
+    }
   }
 }
