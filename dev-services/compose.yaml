@@ -3,20 +3,20 @@ services:
     image: postgres
     container_name: db
     restart: unless-stopped
-    user: postgres
-    volumes:
-      - ./data/postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=tasks
       - POSTGRES_PASSWORD=mysecretpassword
       - POSTGRES_USER=postgres
     ports:
       - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: [CMD, pg_isready, -U, postgres]
       interval: 10s
       timeout: 5s
       retries: 5
+
   redis:
     image: redis:8-alpine
     container_name: redis
@@ -66,3 +66,5 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+volumes:
+  postgres_data:
